@@ -10,18 +10,20 @@ defineEmits<{
 }>()
 
 const rows = [
-  'qwertyuiop'.split(''),
-  'asdfghjkl'.split(''),
-  ['Enter', ...'zxcvbnm'.split(''), 'Backspace']
+  'ქწერტყუიოპ'.split(''),
+  'ასდფფგჰჯკლ'.split(''),
+  'ზხცვბნმ'.split(''),
+  ['Enter', ...'ჭღთშჟძჩ'.split(''), 'Backspace']
 ]
 </script>
 
 <template>
   <div id="keyboard">
-    <div class="row" v-for="(row, i) in rows">
-      <div class="spacer" v-if="i === 1"></div>
+    <div class="row" v-for="(row, i) in rows" :key="i">
+      <div class="spacer" v-if="i === 2"></div>
       <button
-        v-for="key in row"
+        v-for="(key, i) in row"
+        :key="i"
         :class="[key.length > 1 && 'big', letterStates[key]]"
         @click="$emit('key', key)"
       >
@@ -39,7 +41,7 @@ const rows = [
           ></path>
         </svg>
       </button>
-      <div class="spacer" v-if="i === 1"></div>
+      <div class="spacer" v-if="i === 2"></div>
     </div>
   </div>
 </template>
@@ -58,30 +60,6 @@ const rows = [
 .spacer {
   flex: 0.5;
 }
-button {
-  font-family: inherit;
-  font-weight: bold;
-  border: 0;
-  padding: 0;
-  margin: 0 6px 0 0;
-  height: 58px;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-  background-color: #d3d6da;
-  color: #1a1a1b;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.2s 1.5s;
-}
-button:last-of-type {
-  margin: 0;
-}
-button.big {
-  flex: 1.5;
-}
+
+
 </style>

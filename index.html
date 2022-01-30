@@ -2,11 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    <title>გამოიცანი სიტყვა - Wordle ქართულად</title>
+    <meta name="description" content="გამოიცანი სიტყვა არის Wordle-ს ქართული ვარიანტი">
+
+    <!-- FB Meta Tags -->
+    <meta property="og:url" content="https://wordle.ge">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WORDLE - ქართულად">
+    <meta property="og:description" content="გამოიცანი სიტყვა არის Wordle-ს ქართული ვარიანტი">
+    <meta property="og:image" content="assets/img/wordle_ge_1200x630.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="wordle.ge">
+
+    <meta name="theme-color" content="#6aaa64" />
+    <link href="assets/img/logo.png" rel="icon shortcut" sizes="3232" />
+    <link href="assets/img/logo_small.png" rel="apple-touch-icon" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VVordle - a Wordle clone with Vue.js</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6K41VSFNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T6K41VSFNB');
+    </script>
   </head>
-  <body>
+  <body class="nightmode">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
