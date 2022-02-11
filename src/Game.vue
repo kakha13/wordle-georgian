@@ -18,7 +18,9 @@ const board = $ref(
   )
 )
 
-
+function openLink(type: string) {
+    window.open(type, "_blank");    
+}
 // Current active row.
 let currentRowIndex = $ref(0)
 
@@ -55,6 +57,18 @@ function onModal(type: string) {
   modalState = type
 }
 
+  async function sharer(){
+    if (navigator.share) {
+        navigator
+          .share({
+            title: message,
+            text: `${message} \n ${grid}`,
+            url: "https://wordle.ge",
+          })
+          .then(() => console.log("Successful share"))
+          .catch((error) => console.log("Error sharing:", error));
+      }
+  };
 
 function onKey(key: string) {
   if (!allowInput) return
@@ -192,6 +206,7 @@ function genResultGrid() {
     <div class="message" v-if="message">
       {{ message }}
       <pre v-if="grid">{{ grid }}</pre>
+      <button class="share" @click="sharer()">Share</button>
     </div>
   </Transition>
   <header>
@@ -201,7 +216,17 @@ function genResultGrid() {
           </button>
         </div>
         <div class="title">
-         გამოიცანი სიტყვა
+         გამოიცანი დღის სიტყვა
+        </div>
+        <div class="downloads">
+          <button id="android-button" @click="openLink('https://play.google.com/store/apps/details?id=ge.wordle')" class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.029 512.029" style="enable-background:new 0 0 512 512" xml:space="preserve" ><path d="M112 8a65 65 0 0 0-64 0l234 216 78-79L112 8zM25 30c-6 10-9 20-9 32v388c0 11 3 22 8 31l235-235L25 30zM464 203l-75-42-84 84 103 95 56-31a61 61 0 0 0 0-106zM282 268 47 503a66 66 0 0 0 65 1l267-147-97-89z" data-original="#000000" xmlns="http://www.w3.org/2000/svg"/></svg>
+          </button>
+
+          <button id="ios-button" class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" @click="openLink('https://apps.apple.com/us/app/guess-georgian-word/id1608790468')" style="enable-background:new 0 0 24 24" xml:space="preserve"  viewBox="0 0 512 512"><path d="M407 0H105C47 0 0 47 0 105v302c0 58 47 105 105 105h302c58 0 105-47 105-105V105C512 47 465 0 407 0zM158 395a25 25 0 0 1-44-25l5-9h58l-19 34zm-47-54a25 25 0 0 1 0-50h49l67-117-18-31c-7-12-3-28 9-35s27-2 34 10l4 6 4-6a25 25 0 0 1 43 25l-86 148h54l29 50H111zm291 0h-21l17 29a25 25 0 0 1-44 25l-86-151 28-50 56 97h50a25 25 0 0 1 0 50z" data-original="#000000"  xmlns="http://www.w3.org/2000/svg"/></svg>
+          </button>
+         
         </div>
         <div class="menu">
           <!-- <button id="statistics-button" class="icon" aria-label="statistics">

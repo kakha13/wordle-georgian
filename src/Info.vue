@@ -1,12 +1,12 @@
 <template>
   <section>
     <div class="instructions">
-      <p>გამოიცანი <strong>სიტყვა</strong> 6 ცდაში.</p>
+      <p>გამოიცანი <strong>დღის სიტყვა</strong> 6 ცდაში.</p>
       <p>
-          ყოველი ჩაწერილი სიტყვა უნდა იყოს რეალური. აკრიფეთ სიტყვა და დააჭირეთ 'Enter'
+          აკრიფეთ სიტყვა და დააჭირეთ 'Enter'
       </p>
       <p>
-          ყოველი ცდის შემდეგ გამოჩნდება ფერი, რომელიც გაჩვენებთ თუ რამდენად ახლოს ხართ გამოსაცნობ სიტვასთან.
+          ყოველი ცდის შემდეგ გამოჩნდება ფერი, რომელიც გაჩვენებთ თუ რამდენად ახლოს ხართ დღის სიტყვასთან.
       </p>
       <div class="examples">
         <p><strong>მაგალითები</strong></p>
@@ -29,29 +29,29 @@
             </div>
           </div>
           <p>
-            ასო <strong>კ</strong> არის სიტყვაში და სწორე ადგილზე.
+            ასო [კ] არის დღის სიტყვაში და სწორ პოზიციაზე.
           </p>
         </div>
         <div class="example">
           <div class="row">
             <div class="tile">
-                <div class="front">ხ</div>
+                <div class="front">ბ</div>
             </div>
             <div class="tile present">
-                <div class="back">მ</div>
+                <div class="back">ა</div>
             </div>
             <div class="tile">
-                <div class="front">ე</div>
+                <div class="front">რ</div>
             </div>
             <div class="tile">
-                <div class="front">ბ</div>
+                <div class="front">გ</div>
             </div>
             <div class="tile">
                 <div class="front">ი</div>
             </div>
           </div>
        
-          <p>ასო <strong>მ</strong> სიტყვაშია მაგრამ არასწორ ადგილზე</p>
+          <p>ასო [ა] არის დღის სიტყვაში მაგრამ არასწორ პოზიციაზე.</p>
           
         </div>
         <div class="example">
@@ -73,14 +73,12 @@
             </div>
           </div>
           <p>
-            ასო <strong>ი</strong> არცერთ ადგილზე არ ზის.
+            ასო [ი] არ არის დღის სიტყვაში.
           </p>
         </div>
       </div>
       <p>
-        <strong
-          >ყოველდღე ახალი სიტყვა იქნება გამოსაცნობი<strong></strong
-        ></strong>
+        <strong>დღის სიტყვა იცვლება 24 საათში ერთხელ</strong>
       </p>
       <strong><strong> </strong></strong>
     </div>

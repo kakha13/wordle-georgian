@@ -11,7 +11,7 @@ defineEmits<{
 
 const rows = [
   'ქწერტყუიოპ'.split(''),
-  'ასდფფგჰჯკლ'.split(''),
+  'ასდფგჰჯკლ'.split(''),
   'ზხცვბნმ'.split(''),
   ['Enter', ...'ჭღთშჟძჩ'.split(''), 'Backspace']
 ]
